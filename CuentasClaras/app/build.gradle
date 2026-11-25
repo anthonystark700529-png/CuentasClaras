@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.lor76.cuentasclaras'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.lor76.cuentasclaras"
+        minSdk 21          // Android 5.0 en adelante
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.12.0'
+    // Lector de texto en fotos (funciona sin internet, dentro del móvil)
+    implementation 'com.google.mlkit:text-recognition:16.0.1'
+}
